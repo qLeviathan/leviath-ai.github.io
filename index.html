@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leviathan AI | Quantum Flux Neural Networks</title>
+    <style>
+        :root {
+            --bg-primary: #0a192f;
+            --bg-secondary: #112240;
+            --accent-primary: #64ffda;
+            --text-primary: #e6f1ff;
+            --text-secondary: #8892b0;
+            --transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            font-family: "SF Mono", "Fira Code", monospace;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            padding: 20px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            background-color: rgba(10, 25, 47, 0.9);
+            backdrop-filter: blur(10px);
+            z-index: 100;
+            transition: var(--transition);
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--accent-primary);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 30px;
+        }
+        
+        nav ul li a {
+            color: var(--text-primary);
+            text-decoration: none;
+            position: relative;
+            transition: var(--transition);
+        }
+        
+        nav ul li a:hover {
+            color: var(--accent-primary);
+        }
+        
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 1px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--accent-primary);
+            transition: var(--transition);
+        }
+        
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+        
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        #quantum-canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.15;
+            z-index: -1;
+        }
+        
+        .hero-content {
+            max-width: 700px;
+        }
+        
+        .hero-subtitle {
+            color: var(--accent-primary);
+            margin-bottom: 20px;
+            font-weight: 400;
+        }
+        
+        .hero-title {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            line-height: 1.1;
+        }
+        
+        .hero-description {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            max-width: 540px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: transparent;
+            color: var(--accent-primary);
+            border: 1px solid var(--accent-primary);
+            border-radius: 4px;
+            padding: 1rem 1.75rem;
+            font-size: 14px;
+            line-height: 1;
+            text-decoration: none;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .btn:hover {
+            background-color: rgba(100, 255, 218, 0.1);
+        }
+        
+        .section {
+            padding: 100px 0;
+        }
+        
+        .section-title {
+            display: flex;
+            align-items: center;
+            position: relative;
+            margin: 10px 0 40px;
+            width: 100%;
+            font-size: 2rem;
+            white-space: nowrap;
+        }
+        
+        .section-title::after {
+            content: "";
+            display: block;
+            position: relative;
+            width: 300px;
+            height: 1px;
+            margin-left: 20px;
+            background-color: var(--text-secondary);
+        }
+        
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .tech-card {
+            background-color: var(--bg-secondary);
+            border-radius: 4px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px -15px rgba(2, 12, 27, 0.7);
+            transition: var(--transition);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .tech-card:hover {
+            transform: translateY(-7px);
+        }
+        
+        .tech-card-title {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+        
+        .tech-card-content {
+            color: var(--text-secondary);
+            font-size: 1rem;
+            flex-grow: 1;
+        }
+        
+        .tech-card-link {
+            margin-top: 1rem;
+            align-self: flex-start;
+            color: var(--accent-primary);
+            text-decoration: none;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .tech-card-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 1px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--accent-primary);
+            transition: var(--transition);
+        }
+        
+        .tech-card-link:hover::after {
+            width: 100%;
+        }
+        
+        .research-papers {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        .paper-card {
+            background-color: var(--bg-secondary);
+            border-radius: 4px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px -15px rgba(2, 12, 27, 0.7);
+            transition: var(--transition);
+        }
+        
+        .paper-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .paper-title {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+        }
+        
+        .paper-authors {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+        
+        .paper-abstract {
+            color: var(--text-secondary);
+            font-size: 1rem;
+            margin-bottom: 1rem;
+        }
+        
+        .paper-links {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .paper-link {
+            color: var(--accent-primary);
+            text-decoration: none;
+            position: relative;
+            display: inline-block;
+            font-size: 0.9rem;
+        }
+        
+        .paper-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 1px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--accent-primary);
+            transition: var(--transition);
+        }
+        
+        .paper-link:hover::after {
+            width: 100%;
+        }
+        
+        footer {
+            padding: 40px 0;
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+        
+        /* Contact Section Styles */
+        .contact-methods {
+            display: flex;
+            gap: 30px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+
+        .contact-card {
+            flex: 1;
+            min-width: 300px;
+            background-color: var(--bg-secondary);
+            border-radius: 4px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px -15px rgba(2, 12, 27, 0.7);
+        }
+
+        .signup-form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .email-input {
+            background-color: rgba(100, 255, 218, 0.1);
+            border: 1px solid var(--accent-primary);
+            border-radius: 4px;
+            padding: 12px 15px;
+            color: var(--text-primary);
+            font-family: inherit;
+            width: 100%;
+        }
+
+        .email-input:focus {
+            outline: none;
+            box-shadow: 0 0 0 2px rgba(100, 255, 218, 0.3);
+        }
+
+        .submit-btn {
+            background: transparent;
+            color: var(--accent-primary);
+            border: 1px solid var(--accent-primary);
+            border-radius: 4px;
+            padding: 12px 15px;
+            font-family: inherit;
+            cursor: pointer;
+            transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+        }
+
+        .submit-btn:hover {
+            background-color: rgba(100, 255, 218, 0.1);
+        }
+
+        @media screen and (max-width: 768px) {
+            .contact-methods {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container header-content">
+            <div class="logo"><a href="index.html" style="text-decoration: none; color: var(--accent-primary);">LEVIATHAN AI</a></div>
+            <nav>
+                <ul>
+                    <li><a href="#research">Research</a></li>
+                    <li><a href="leviathan-technology.html">Technology</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <canvas id="quantum-canvas"></canvas>
+            <div class="container hero-content">
+                <h3 class="hero-subtitle">Welcome to the depths of intelligence</h3>
+                <h1 class="hero-title">Quantum Flux Neural Networks</h1>
+                <p class="hero-description">Reimagining neural computation through the lens of quantum physics. A fundamental rethinking of AI architecture inspired by the elegance of natural laws.</p>
+                <a href="#research" class="btn">Explore Our Research</a>
+            </div>
+        </section>
+
+        <section id="technology" class="section">
+            <div class="container">
+                <h2 class="section-title">Core Technology</h2>
+                <div class="tech-grid">
+                    <div class="tech-card">
+                        <h3 class="tech-card-title">Quantum Flux Architecture</h3>
+                        <p class="tech-card-content">A physics-inspired neural architecture that represents tokens as points in cylindrical quantum space. Leveraging principles of quantum mechanics and electromagnetic field theory to create a radically efficient design.</p>
+                        <a href="leviathan-technology.html#architecture-overview" class="tech-card-link">Learn more →</a>
+                    </div>
+                    <div class="tech-card">
+                        <h3 class="tech-card-title">Phase-Distance Attention</h3>
+                        <p class="tech-card-content">Attention mechanism based on quantum wave interference and inverse square laws. Direct computation of interaction strengths through geometric principles, reducing complexity by orders of magnitude.</p>
+                        <a href="leviathan-technology.html#phase-distance-attention" class="tech-card-link">Learn more →</a>
+                    </div>
+                    <div class="tech-card">
+                        <h3 class="tech-card-title">Hebbian Learning</h3>
+                        <p class="tech-card-content">Training without backpropagation using the principle that "neurons that fire together, wire together." Dramatically reduces memory requirements while maintaining convergence guarantees.</p>
+                        <a href="leviathan-technology.html#hebbian-learning" class="tech-card-link">Learn more →</a>
+                    </div>
+                    <div class="tech-card">
+                        <h3 class="tech-card-title">Reality Engine</h3>
+                        <p class="tech-card-content">Extending quantum flux principles to create virtual environments that faithfully simulate physical laws. An emerging platform for scientific research and development.</p>
+                        <a href="reality-engine-pathway.html" class="tech-card-link">Learn more →</a>
+                    </div>
+                    <div class="tech-card">
+                        <h3 class="tech-card-title">Quantum Computing Implementation</h3>
+                        <p class="tech-card-content">Implementing QFNN on quantum computing platforms to unlock exponential acceleration. A natural pathway from quantum-inspired algorithms to native quantum execution.</p>
+                        <a href="quantum-computing-implementation.html" class="tech-card-link">Learn more →</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="research" class="section">
+            <div class="container">
+                <h2 class="section-title">Research</h2>
+                <div class="research-papers">
+                    <div class="paper-card">
+                        <h3 class="paper-title">Quantum Flux Neural Networks: A Physics-Inspired Architecture for Efficient Neural Computation</h3>
+                        <p class="paper-authors">Leviathan AI Corporation</p>
+                        <p class="paper-abstract">This paper introduces the Quantum Flux Neural Network (QFNN), a physics-inspired architecture that reimagines neural computation through fundamental principles of quantum mechanics and electromagnetic field theory...</p>
+                        <div class="paper-links">
+                            <a href="#" class="paper-link">arXiv →</a>
+                            <a href="https://github.com/qLeviathan" class="paper-link">GitHub →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="section">
+            <div class="container">
+                <h2 class="section-title">About Leviathan AI</h2>
+                <p style="color: var(--text-secondary); margin-bottom: 2rem;">
+                    Leviathan AI Corporation explores the depths of intelligence through principled approaches grounded in fundamental physics. We believe that the most elegant solutions emerge from the underlying mathematical structure of reality itself.
+                </p>
+                <p style="color: var(--text-secondary);">
+                    Our research focuses on reimagining neural computation from first principles, seeking efficiency and insight through the lens of quantum mechanics, field theory, and statistical physics.
+                </p>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section">
+            <div class="container">
+                <h2 class="section-title">Contact</h2>
+                <p style="color: var(--text-secondary); margin-bottom: 2rem;">
+                    Interested in our research or exploring collaboration opportunities? Reach out to us.
+                </p>
+                
+                <div class="contact-methods">
+                    <div class="contact-card">
+                        <h3 style="font-size: 1.3rem; margin-bottom: 1rem; color: var(--text-primary);">Email Us</h3>
+                        <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">
+                            For inquiries about our technology, partnerships, or research collaborations:
+                        </p>
+                        <a href="mailto:contact@leviathan-ai.net" class="btn">contact@leviathan-ai.net</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© 2025 Leviathan AI Corporation. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Quantum particle simulation for background
+        const canvas = document.getElementById('quantum-canvas');
+        const ctx = canvas.getContext('2d');
+        
+        // Set canvas dimensions
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        
+        resizeCanvas();
+        window.addEventListener('resize', resizeCanvas);
+        
+        // Particle class
+        class Particle {
+            constructor() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.radius = Math.random() * 2 + 1;
+                this.phase = Math.random() * Math.PI * 2;
+                this.speed = (Math.random() * 0.2) + 0.05;
+                this.amplitude = Math.random() * 20 + 10;
+                this.phaseSpeed = (Math.random() * 0.02) + 0.003;
+                this.color = `rgba(100, 255, 218, ${Math.random() * 0.5 + 0.1})`;
+            }
+            
+            update() {
+                this.phase += this.phaseSpeed;
+                this.y += Math.sin(this.phase) * this.amplitude * 0.01;
+                this.x += this.speed;
+                
+                if (this.x > canvas.width + 100) {
+                    this.x = -100;
+                    this.y = Math.random() * canvas.height;
+                }
+            }
+            
+            draw() {
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+                ctx.fillStyle = this.color;
+                ctx.fill();
+            }
+        }
+        
+        // Create particles
+        const particles = [];
+        for (let i = 0; i < 50; i++) {
+            particles.push(new Particle());
+        }
+        
+        // Animation loop
+        function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            
+            // Draw connections between nearby particles
+            ctx.strokeStyle = 'rgba(100, 255, 218, 0.05)';
+            ctx.lineWidth = 0.5;
+            
+            for (let i = 0; i < particles.length; i++) {
+                for (let j = i + 1; j < particles.length; j++) {
+                    const dx = particles[i].x - particles[j].x;
+                    const dy = particles[i].y - particles[j].y;
+                    const distance = Math.sqrt(dx * dx + dy * dy);
+                    
+                    if (distance < 150) {
+                        ctx.beginPath();
+                        ctx.moveTo(particles[i].x, particles[i].y);
+                        ctx.lineTo(particles[j].x, particles[j].y);
+                        ctx.stroke();
+                    }
+                }
+            }
+            
+            // Update and draw particles
+            particles.forEach(particle => {
+                particle.update();
+                particle.draw();
+            });
+            
+            requestAnimationFrame(animate);
+        }
+        
+        animate();
+        
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.style.boxShadow = '0 10px 30px -10px rgba(2, 12, 27, 0.7)';
+            } else {
+                header.style.boxShadow = 'none';
+            }
+        });
+        
+        // Smooth scrolling for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>

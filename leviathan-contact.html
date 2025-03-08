@@ -1,0 +1,94 @@
+<!-- Enhanced Contact Section for Homepage -->
+<section id="contact" class="section">
+    <div class="container">
+        <h2 class="section-title">Contact</h2>
+        <p style="color: var(--text-secondary); margin-bottom: 2rem;">
+            Interested in our research or exploring collaboration opportunities? Reach out to us.
+        </p>
+        
+        <div class="contact-methods">
+            <div class="contact-card">
+                <h3 style="font-size: 1.3rem; margin-bottom: 1rem; color: var(--text-primary);">Email Us</h3>
+                <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">
+                    For inquiries about our technology, partnerships, or research collaborations:
+                </p>
+                <a href="mailto:contact@leviathan-ai.net" class="btn">contact@leviathan-ai.net</a>
+            </div>
+            
+            <div class="contact-card">
+                <h3 style="font-size: 1.3rem; margin-bottom: 1rem; color: var(--text-primary);">Stay Updated</h3>
+                <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">
+                    Subscribe to receive updates on our latest research and technological breakthroughs.
+                </p>
+                <form class="signup-form" action="#" method="POST">
+                    <input type="email" placeholder="Your email address" required class="email-input">
+                    <button type="submit" class="submit-btn">Subscribe</button>
+                </form>
+                <p style="color: var(--text-secondary); font-size: 0.8rem; margin-top: 1rem;">
+                    We respect your privacy. Your email will never be shared.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CSS to be added to the style section -->
+<style>
+.contact-methods {
+    display: flex;
+    gap: 30px;
+    margin-top: 40px;
+    flex-wrap: wrap;
+}
+
+.contact-card {
+    flex: 1;
+    min-width: 300px;
+    background-color: var(--bg-secondary);
+    border-radius: 4px;
+    padding: 2rem;
+    box-shadow: 0 10px 30px -15px rgba(2, 12, 27, 0.7);
+}
+
+.signup-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.email-input {
+    background-color: rgba(100, 255, 218, 0.1);
+    border: 1px solid var(--accent-primary);
+    border-radius: 4px;
+    padding: 12px 15px;
+    color: var(--text-primary);
+    font-family: inherit;
+    width: 100%;
+}
+
+.email-input:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(100, 255, 218, 0.3);
+}
+
+.submit-btn {
+    background: transparent;
+    color: var(--accent-primary);
+    border: 1px solid var(--accent-primary);
+    border-radius: 4px;
+    padding: 12px 15px;
+    font-family: inherit;
+    cursor: pointer;
+    transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.submit-btn:hover {
+    background-color: rgba(100, 255, 218, 0.1);
+}
+
+@media screen and (max-width: 768px) {
+    .contact-methods {
+        flex-direction: column;
+    }
+}
+</style>

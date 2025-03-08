@@ -1,0 +1,96 @@
+const distance = Math.sqrt(dx * dx + dy * dy);
+                    
+                    // Only draw connections between nearby tokens based on cylindrical distance
+                    const cylindricalDist = Math.sqrt((x1-x2)**2 + (y1-y2)**2);
+                    
+                    if (cylindricalDist < 0.5) {  // Only connect "nearby" tokens in cylindrical space
+                        // Calculate line opacity based on distance
+                        const opacity = Math.max(0, 1 - cylindricalDist * 2);
+                        
+                        // Calculate wave interference (cosine of phase difference)
+                        const theta1 = Math.atan2(y1, x1);
+                        const theta2 = Math.atan2(y2, x2);
+                        const phaseInterference = 0.5 + 0.5 * Math.cos(theta1 - theta2);
+                        
+                        // Calculate color based on interference (constructive = cyan, destructive = darker)
+                        const alpha = opacity * phaseInterference;
+                        const colorIntensity = Math.floor(phaseInterference * 255);
+                        
+                        // Draw connection
+                        ctx.beginPath();
+                        ctx.moveTo(canvasX1, canvasY1);
+                        ctx.lineTo(canvasX2, canvasY2);
+                        ctx.strokeStyle = `rgba(100, ${colorIntensity+100}, 218, ${alpha})`;
+                        ctx.lineWidth = 1.5 * phaseInterference;
+                        ctx.stroke();
+                    }
+                }
+            }
+            
+            // Draw sequential token connections (showing sequence order)
+            for (let i = 0; i < states.length - 1; i++) {
+                const [x1, y1] = states[i];
+                const [x2, y2] = states[i + 1];
+                
+                const canvasX1 = (x1 + 1) * width / 2;
+                const canvasY1 = (y1 + 1) * height / 2;
+                const canvasX2 = (x2 + 1) * width / 2;
+                const canvasY2 = (y2 + 1) * height / 2;
+                
+                // Draw sequential connection
+                ctx.beginPath();
+                ctx.moveTo(canvasX1, canvasY1);
+                ctx.lineTo(canvasX2, canvasY2);
+                ctx.strokeStyle = 'rgba(100, 255, 218, 0.8)';
+                ctx.lineWidth = 1.5;
+                ctx.setLineDash([3, 3]); // Dashed line for sequence
+                ctx.stroke();
+                ctx.setLineDash([]); // Reset line dash
+            }
+        }
+        
+        // Simple hash function for deterministic token positioning
+        function simpleHash(str) {
+            let hash = 0;
+            for (let i = 0; i < str.length; i++) {
+                const char = str.charCodeAt(i);
+                hash = ((hash << 5) - hash) + char;
+                hash = hash & hash; // Convert to 32bit integer
+            }
+            return Math.abs(hash);
+        }
+        
+        // Generate random word for demo text generation
+        function getRandomWord() {
+            const words = [
+                'the', 'of', 'and', 'a', 'to', 'in', 'is', 'that', 'it', 'was', 
+                'for', 'with', 'as', 'on', 'by', 'at', 'this', 'an', 'which', 
+                'from', 'or', 'but', 'not', 'what', 'all', 'were', 'when', 'we', 
+                'there', 'can', 'one', 'has', 'their', 'time', 'about', 'now', 
+                'like', 'other', 'into', 'more', 'quantum', 'physics', 'model',
+                'neural', 'network', 'theory', 'energy', 'state', 'system', 'flux'
+            ];
+            return words[Math.floor(Math.random() * words.length)];
+        }
+        
+        // Helper function for loading model weights
+        // Note: This is a simplified implementation for demonstration purposes
+        // Our production implementation uses proprietary techniques for model loading and optimization
+        async function loadModelFromGDrive(driveUrl) {
+            // Basic implementation for demo purposes
+            const fileId = extractFileIdFromDriveUrl(driveUrl);
+            const directDownloadUrl = `https://drive.google.com/uc?export=download&id=${fileId}`;
+            
+            // Load model
+            return await tf.loadLayersModel(directDownloadUrl);
+        }
+        
+        // Helper to extract file ID from Google Drive share URL
+        function extractFileIdFromDriveUrl(url) {
+            // Example: https://drive.google.com/file/d/1AbCdEfG-hIjKlMnOpQrStUvWxYz/view?usp=sharing
+            const match = url.match(/\/d\/(.+?)\/|id=(.+?)(&|$)/);
+            return match ? (match[1] || match[2]) : null;
+        }
+    </script>
+</body>
+</html>
