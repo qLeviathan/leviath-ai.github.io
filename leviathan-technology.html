@@ -319,70 +319,93 @@
                     The Quantum Flux Neural Network (QFNN) represents a fundamental reimagining of neural computation through physical principles. Rather than incrementally optimizing existing approaches, the QFNN implements a minimal set of physical laws that govern information flow in a principled manner.
                 </p>
                 
-                <div style="margin: 30px 0;">
-                    <img src="/api/placeholder/800/500" alt="QFNN Architecture Diagram" class="architecture-diagram">
-                </div>
-                
-                <p class="component-description">
-                    The complete information flow through the QFNN architecture follows this structure:
-                </p>
-                
                 <div class="code-block" style="font-family: monospace; white-space: pre; line-height: 1.2;">
-<span class="code-comment">// QFNN Architecture Information Flow</span>
-
-Input Tokens
-    │
-    ▼
-┌─────────────────────────────────────────────┐
-│ QuantumTokenRepresentation                  │
-│ ├─ Reverse Euler Identity mapping:          │
-│ │  ψ_i = r_i e^(iθ_i) = (r_i cos θ_i, r_i sin θ_i) │
-│ └─ Golden ratio phase distribution          │
-└─────────────────────┬───────────────────────┘
-                      │
-                      ▼
-┌─────────────────────────────────────────────┐
-│ QFNNLayer (×N)                              │
-│ │                                           │
-│ ├─ PhaseDistanceAttention                   │
-│ │  ├─ Wave interference: cos(Δφ)            │
-│ │  ├─ Amplitude product: r_i·r_j            │
-│ │  ├─ Inverse square law: 1/|r_i - r_j|     │
-│ │  └─ Energy conservation normalization     │
-│ │                                           │
-│ ├─ PhysicalStateEvolution                   │
-│ │  ├─ Imaginary-time Schrödinger equation   │
-│ │  ├─ Diffusion term (quantum fluctuation)  │
-│ │  ├─ Drift term (attention-based force)    │
-│ │  └─ Phase coherence (quantum alignment)   │
-│ │                                           │
-│ └─ MeanFieldInteraction                     │
-│    ├─ Quantum statistical mechanics         │
-│    └─ Collective field alignment            │
-└─────────────────────┬───────────────────────┘
-                      │
-                      ▼
-┌─────────────────────────────────────────────┐
-│ LinearProjection                            │
-│ └─ 2D quantum state → hidden dimensions     │
-└─────────────────────┬───────────────────────┘
-                      │
-                      ▼
-┌─────────────────────────────────────────────┐
-│ PhysicsBasedOutput                          │
-│ ├─ Energy scores (unnormalized log probs)   │
-│ └─ Energy → Probability mapping             │
-└─────────────────────┬───────────────────────┘
-                      │
-                      ▼
-                Output Logits
+┌───────────────────────────────────────────────────────────────────┐
+│                    MULTIFOLD QUANTUM FIELD THEORY                  │
+└───────────────────────────────────────────────────────────────────┘
+          │                   │                      │
+          ▼                   ▼                      ▼
+┌─────────────────┐  ┌────────────────┐  ┌────────────────────────┐
+│ QUANTUM FIELD   │  │ POISSON FIELD  │  │ WAVE INTERFERENCE      │
+│ REPRESENTATION  │  │ EQUATIONS      │  │ DYNAMICS               │
+└─────────────────┘  └────────────────┘  └────────────────────────┘
+          │                   │                      │
+          │                   │                      │
+          │       ┌───────────────────────┐         │
+          └──────►│  UNIFIED FIELD SPACE  │◄────────┘
+                  └───────────────────────┘
+                            │
+                            ▼
+          ┌─────────────────────────────────────┐
+          │        TRIANGULAR TOPOLOGY          │
+          │                                     │
+          │                                     │
+          │                 /\                  │
+          │                /  \                 │
+          │               /    \                │
+          │              /      \               │
+          │           r /        \ r            │
+          │            /          \             │
+          │           /   θ ——▶    \            │
+          │          /              \           │
+          │         └────────────────┘          │
+          │                                     │
+          └─────────────────────────────────────┘
+                            │
+                            ▼
+┌─────────────────┐  ┌────────────────┐  ┌────────────────────────┐
+│ RADIAL          │  │ NEGATIVE       │  │ EULER IDENTITY         │
+│ DIFFUSION       │◄─┤ LAPLACIAN      │◄─┤                        │
+└─────────────────┘  └────────────────┘  └────────────────────────┘
+          │                   │                      │
+          ▼                   ▼                      ▼
+┌─────────────────┐  ┌────────────────┐  ┌────────────────────────┐
+│  PROBABILITY    │  │ Quantum        │  │ PHASE                  │
+│  DISTRIBUTION   │  │ ODEs           │  │ ATTENTION              │
+└─────────────────┘  └────────────────┘  └────────────────────────┘
+          │                   │                      │
+          └───────────────────┼──────────────────────┘
+                              ▼
+                    ┌───────────────────┐
+                    │     QFNN MODEL    │
+                    └───────────────────┘
 </div>
 
+                <p class="component-description">
+                    Our architecture is based on Multifold Quantum Field Theory, which integrates several key components to create a powerful and efficient neural network model.
+                </p>
+
+                <div class="comparison-container">
+                    <div class="comparison-card">
+                        <h4 class="comparison-title">Foundation Components</h4>
+                        <ul class="comparison-list">
+                            <li>Quantum Field Representation for token encoding</li>
+                            <li>Poisson Field Equations for state evolution</li>
+                            <li>Wave Interference Dynamics for attention mechanisms</li>
+                            <li>Unified Field Space with triangular topology</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="comparison-card">
+                        <h4 class="comparison-title">Processing Components</h4>
+                        <ul class="comparison-list">
+                            <li>Radial Diffusion for information propagation</li>
+                            <li>Negative Laplacian for energy minimization</li>
+                            <li>Euler Identity for complex number representation</li>
+                            <li>Phase Attention for token relationships</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <p class="component-description" style="margin-top: 30px;">
+                    The QFNN approach differs fundamentally from traditional neural networks by leveraging physical principles rather than arbitrary matrix operations. This results in dramatic efficiency gains while maintaining or improving performance.
+                </p>
+                
                 <div class="comparison-container">
                     <div class="comparison-card">
                         <h4 class="comparison-title">QFNN Approach</h4>
                         <ul class="comparison-list">
-                            <li>Token representation in cylindrical quantum space</li>
+                            <li>Token representation in quantum field space</li>
                             <li>Direct geometric computation of attention</li>
                             <li>Physical evolution following quantum laws</li>
                             <li>Natural sparsity via quantum tunneling</li>
@@ -413,57 +436,23 @@ Input Tokens
                     
                     <h3 class="component-title">Quantum Token Representation</h3>
                     <p class="component-description">
-                        The QFNN represents tokens as points in a 2D cylindrical quantum space, leveraging the mathematical equivalence between 2D Cartesian coordinates and complex numbers:
+                        The QFNN represents tokens as points in a 2D quantum field space, leveraging the mathematical equivalence between 2D Cartesian coordinates and complex numbers:
                     </p>
-                    
-                    <div class="math-display">
-                        ψ<sub>i</sub> = r<sub>i</sub>e<sup>iθ<sub>i</sub></sup> = r<sub>i</sub>(cos θ<sub>i</sub> + i sin θ<sub>i</sub>) = (r<sub>i</sub>cos θ<sub>i</sub>, r<sub>i</sub>sin θ<sub>i</sub>)
-                    </div>
                     
                     <p class="component-description">
-                        Where:
+                        Our quantum field representation uses a 2D space where each token has both an amplitude (importance) and a phase (semantic meaning). This approach allows for efficient computation while preserving the rich relationships between tokens.
                     </p>
-                    <ul style="color: var(--text-secondary); margin-left: 20px; margin-bottom: 20px;">
-                        <li>r<sub>i</sub> ∈ ℝ<sup>+</sup> represents token amplitude/importance</li>
-                        <li>θ<sub>i</sub> ∈ [0, 2π) represents token phase/semantic meaning</li>
-                        <li>(r<sub>i</sub>cos θ<sub>i</sub>, r<sub>i</sub>sin θ<sub>i</sub>) ∈ ℝ<sup>2</sup> is the computationally efficient Cartesian form</li>
-                    </ul>
-                    
-                    <div class="code-block">
-<span class="code-comment"># Initialize with physics-informed angles and radii</span>
-with torch.no_grad():
-    <span class="code-comment"># Quantum-inspired phase angles - use golden ratio for incommensurable phases</span>
-    phi = (1 + math.sqrt(5)) / 2  <span class="code-comment"># Golden ratio</span>
-    thetas = torch.tensor([2 * math.pi * (phi * i % 1) for i in range(config.vocab_size)])
-    
-    <span class="code-comment"># Radii follow a physical distribution (inverse square law inspired)</span>
-    radii = config.r_min + (config.r_max - config.r_min) * (1.0 / torch.sqrt(normalized_positions + 0.1))
-    
-    <span class="code-comment"># Convert to Cartesian coordinates using reverse Euler identity</span>
-    self.embeddings.weight.data[:, 0] = radii * torch.cos(thetas)  <span class="code-comment"># x = r*cos(θ)</span>
-    self.embeddings.weight.data[:, 1] = radii * torch.sin(thetas)  <span class="code-comment"># y = r*sin(θ)</span>
-</div>
                 </div>
                 
                 <div class="component-section">
                     <h3 id="phase-distance-attention" class="component-title">Phase-Distance Attention Mechanism</h3>
                     <p class="component-description">
-                        The QFNN implements a novel attention mechanism inspired by quantum wave interference between token states. This approach directly computes interaction strengths through geometric principles in cylindrical quantum space.
+                        The QFNN implements a novel attention mechanism inspired by quantum wave interference between token states. This approach directly computes interaction strengths through geometric principles in quantum field space.
                     </p>
-                    
-                    <div class="math-display">
-                        A<sub>ij</sub> = f(φ<sub>i</sub>, φ<sub>j</sub>, r<sub>i</sub>, r<sub>j</sub>, d<sub>ij</sub>)
-                    </div>
                     
                     <p class="component-description">
-                        Where:
+                        Our proprietary attention mechanism considers the phase angles, amplitudes, and distances between tokens to determine their interaction strength. This approach is inspired by how waves interfere in quantum physics, creating a natural way to model relationships between tokens.
                     </p>
-                    <ul style="color: var(--text-secondary); margin-left: 20px; margin-bottom: 20px;">
-                        <li>f is our proprietary attention function</li>
-                        <li>φ<sub>i</sub>, φ<sub>j</sub> are the phase angles of tokens i and j</li>
-                        <li>r<sub>i</sub>, r<sub>j</sub> are the amplitudes of tokens i and j</li>
-                        <li>d<sub>ij</sub> represents a distance metric in phase space</li>
-                    </ul>
                     
                     <div style="margin: 30px 0;">
                         <img src="/api/placeholder/800/350" alt="Phase-Distance Attention Visualization" class="architecture-diagram">
@@ -474,18 +463,18 @@ with torch.no_grad():
                         The QFNN implements quantum tunneling through a proprietary thresholding mechanism, creating natural sparsity patterns that significantly reduce computational complexity while maintaining model performance.
                     </p>
                     
-                    <div class="math-display">
+                    <p class="component-description">
                         Our proprietary thresholding approach achieves O(n log n) complexity compared to O(n²) for traditional attention mechanisms.
-                    </div>
+                    </p>
                     
                     <h4 class="component-subtitle">Energy Conservation in Attention</h4>
                     <p class="component-description">
                         The QFNN preserves the fundamental physical principle of energy conservation through a proprietary normalization technique that ensures stability across varying sequence lengths and token distributions.
                     </p>
                     
-                    <div class="math-display">
+                    <p class="component-description">
                         Our energy conservation approach maintains consistent attention dynamics regardless of input complexity.
-                    </div>
+                    </p>
                 </div>
                 
                 <div class="component-section">
@@ -494,37 +483,14 @@ with torch.no_grad():
                         The QFNN evolves token states according to the imaginary-time Schrödinger equation, driving the system toward lower energy states:
                     </p>
                     
-                    <div class="math-display">
-                        ∂ψ/∂τ = (ℏ²/2m)∇²ψ - V(ψ)
-                    </div>
-                    
                     <p class="component-description">
-                        This is equivalent to:
+                        Our proprietary quantum evolution approach drives the system toward lower energy states through a process inspired by quantum physics. This process includes diffusion (spreading of information), potential energy from interactions, and controlled quantum fluctuations.
                     </p>
-                    
-                    <div class="math-display">
-                        ∂ψ/∂τ = D∇²ψ - V(ψ) + noise
-                    </div>
-                    
-                    <p class="component-description">
-                        Where:
-                    </p>
-                    <ul style="color: var(--text-secondary); margin-left: 20px; margin-bottom: 20px;">
-                        <li>D∇²ψ represents diffusion (kinetic energy term)</li>
-                        <li>V(ψ) represents potential energy from interactions</li>
-                        <li>noise represents quantum fluctuations</li>
-                    </ul>
                     
                     <h4 class="component-subtitle">Energy Conservation in Evolution</h4>
                     <p class="component-description">
-                        To ensure physical consistency, the QFNN enforces energy conservation during state evolution:
+                        To ensure physical consistency, the QFNN enforces energy conservation during state evolution. Our proprietary normalization technique ensures that the total energy of the system remains constant throughout the computation process, leading to more stable and physically meaningful results.
                     </p>
-                    
-                    <div class="math-display">
-                        E<sub>initial</sub> = Σ<sub>i</sub> |ψ<sub>i</sub>|²
-                        <br><br>
-                        ψ<sub>final</sub> = ψ<sub>evolved</sub> · √(E<sub>initial</sub>/E<sub>evolved</sub>)
-                    </div>
                 </div>
                 
                 <div class="component-section">
@@ -533,26 +499,17 @@ with torch.no_grad():
                         The QFNN implements a novel form of Hebbian learning for weight updates following the principle that "neurons that fire together, wire together." This approach is inspired by biological learning mechanisms observed in neural systems.
                     </p>
                     
-                    <div class="math-display">
-                        ΔW ∝ f(h, e)
-                    </div>
-                    
                     <p class="component-description">
-                        Where:
+                        Our proprietary Hebbian learning approach relates neural activations and error signals to determine weight changes in the network. This biologically-inspired method creates a direct relationship between correlated activity and connection strength.
                     </p>
-                    <ul style="color: var(--text-secondary); margin-left: 20px; margin-bottom: 20px;">
-                        <li>f is a proprietary function that relates activations to weight changes</li>
-                        <li>h represents neural activations in the network</li>
-                        <li>e represents error signals in the learning process</li>
-                    </ul>
                     
                     <p class="component-description">
                         This approach bypasses the need for traditional backpropagation through the network layers, resulting in significant computational and memory efficiency. Our proprietary implementation ensures stable convergence while maintaining learning effectiveness across various tasks.
                     </p>
                     
-                    <div class="math-display">
-                        The QFNN learning algorithm achieves O(n) memory complexity compared to O(n²) for traditional backpropagation methods.
-                    </div>
+                    <p class="component-description">
+                        The QFNN learning algorithm achieves O(n) memory complexity compared to O(n²) for traditional backpropagation methods, making it substantially more efficient for large-scale models.
+                    </p>
                 </div>
             </div>
         </section>
@@ -724,7 +681,7 @@ with torch.no_grad():
                     Our quantum computing implementation roadmap includes:
                 </p>
                 <ul style="color: var(--text-secondary); margin-left: 20px; margin-bottom: 30px;">
-                    <li>Direct mapping from QFNN's cylindrical representation to quantum qubits</li>
+                    <li>Direct mapping from QFNN's quantum field representation to quantum qubits</li>
                     <li>Native implementation of phase-distance attention through quantum interference</li>
                     <li>Quantum-classical hybrid approaches for near-term advantage</li>
                     <li>Long-term vision for full quantum implementation with specialized hardware</li>

@@ -536,13 +536,13 @@
                     
                     <div class="visualization-container">
                         <div class="visualization-panel">
-                            <div class="panel-header">
-                                <span>Cylindrical Phase Space</span>
-                                <div class="panel-controls">
-                                    <button onclick="toggleAnimation()" id="animation-toggle">Pause</button>
-                                    <button onclick="resetView()">Reset View</button>
-                                </div>
-                            </div>
+            <div class="panel-header">
+                <span>Quantum Field Space</span>
+                <div class="panel-controls">
+                    <button onclick="toggleAnimation()" id="animation-toggle">Pause</button>
+                    <button onclick="resetView()">Reset View</button>
+                </div>
+            </div>
                             <div class="panel-content">
                                 <canvas id="phase-space-canvas"></canvas>
                             </div>
@@ -610,22 +610,22 @@
                     <div class="physics-equations">
                         <div class="equation">
                             <div class="equation-name">Token Representation:</div>
-                            <div class="equation-formula">ψ_i = r_i e^(iθ_i) = (r_i cos θ_i, r_i sin θ_i)</div>
+                            <div class="equation-formula">Tokens represented as points in quantum field space with amplitude and phase components</div>
                             <div class="equation-value" id="representation-formula">Active</div>
                         </div>
                         <div class="equation">
                             <div class="equation-name">Phase-Distance Attention:</div>
-                            <div class="equation-formula">A_ij = (0.5 + 0.5cos(Δφ_ij)) · r_i·r_j / |r_i - r_j|</div>
+                            <div class="equation-formula">Attention calculated using phase coherence and spatial proximity in quantum field</div>
                             <div class="equation-value" id="attention-formula">Active</div>
                         </div>
                         <div class="equation">
                             <div class="equation-name">Energy Conservation:</div>
-                            <div class="equation-formula">E_final = E_initial = Σ|ψ_i|²</div>
+                            <div class="equation-formula">Total energy of the system remains constant throughout transformations</div>
                             <div class="equation-value" id="energy-formula">Verified</div>
                         </div>
                         <div class="equation">
                             <div class="equation-name">Quantum Evolution:</div>
-                            <div class="equation-formula">∂ψ/∂τ = D∇²ψ - V(ψ) + noise</div>
+                            <div class="equation-formula">Token states evolve according to quantum field dynamics with diffusion</div>
                             <div class="equation-value" id="evolution-formula">Active</div>
                         </div>
                     </div>
@@ -801,6 +801,58 @@
                 );
                 phaseSpaceCtx.stroke();
             }
+            
+            // Draw triangular topology
+            drawTriangularTopology(centerX, centerY, radius);
+        }
+        
+        function drawTriangularTopology(centerX, centerY, radius) {
+            // Draw triangular topology
+            const triangleSize = radius * 0.8;
+            const triangleHeight = triangleSize * Math.sqrt(3) / 2;
+            
+            // Draw triangle
+            phaseSpaceCtx.beginPath();
+            phaseSpaceCtx.moveTo(centerX, centerY - triangleHeight / 2); // Top
+            phaseSpaceCtx.lineTo(centerX - triangleSize / 2, centerY + triangleHeight / 2); // Bottom left
+            phaseSpaceCtx.lineTo(centerX + triangleSize / 2, centerY + triangleHeight / 2); // Bottom right
+            phaseSpaceCtx.closePath();
+            phaseSpaceCtx.strokeStyle = 'rgba(100, 255, 218, 0.4)';
+            phaseSpaceCtx.lineWidth = 2;
+            phaseSpaceCtx.stroke();
+            
+            // Draw r and θ labels
+            phaseSpaceCtx.font = '14px "SF Mono", "Fira Code", monospace';
+            phaseSpaceCtx.fillStyle = 'rgba(100, 255, 218, 0.7)';
+            
+            // r label (from center to bottom right)
+            const rMidX = centerX + triangleSize / 4;
+            const rMidY = centerY + triangleHeight / 4;
+            phaseSpaceCtx.fillText('r', rMidX + 10, rMidY);
+            
+            // θ label (at the bottom)
+            phaseSpaceCtx.fillText('θ', centerX, centerY + triangleHeight / 2 + 20);
+            
+            // Draw θ arrow
+            const arrowLength = triangleSize / 4;
+            const arrowX = centerX;
+            const arrowY = centerY + triangleHeight / 2 - 10;
+            
+            phaseSpaceCtx.beginPath();
+            phaseSpaceCtx.moveTo(arrowX - arrowLength / 2, arrowY);
+            phaseSpaceCtx.lineTo(arrowX + arrowLength / 2, arrowY);
+            phaseSpaceCtx.strokeStyle = 'rgba(100, 255, 218, 0.7)';
+            phaseSpaceCtx.lineWidth = 1;
+            phaseSpaceCtx.stroke();
+            
+            // Arrow head
+            phaseSpaceCtx.beginPath();
+            phaseSpaceCtx.moveTo(arrowX + arrowLength / 2, arrowY);
+            phaseSpaceCtx.lineTo(arrowX + arrowLength / 2 - 5, arrowY - 3);
+            phaseSpaceCtx.lineTo(arrowX + arrowLength / 2 - 5, arrowY + 3);
+            phaseSpaceCtx.closePath();
+            phaseSpaceCtx.fillStyle = 'rgba(100, 255, 218, 0.7)';
+            phaseSpaceCtx.fill();
         }
         
         function drawEnergyBackground() {

@@ -2,6 +2,8 @@
 
 This repository contains the source code for the Leviathan AI website, showcasing the company's research and technology in Quantum Flux Neural Networks (QFNN).
 
+**© 2025 Leviathan AI Corporation. All rights reserved.**
+
 ## Proprietary Technology Notice
 
 While this website provides detailed information about Leviathan AI's QFNN technology, certain implementation details are proprietary and have been intentionally omitted or simplified:
@@ -22,6 +24,59 @@ The website consists of the following pages:
 - **Quantum Computing Implementation** (`quantum-computing-implementation.html`): Information about implementing QFNN on quantum computing platforms.
 - **Reality Engine Pathway** (`reality-engine-pathway.html`): Details about the Reality Engine, a physics-based simulation environment built on QFNN principles.
 - **Research** (`leviathan-research.html`): Showcases the company's research papers and findings.
+
+## UI Structure
+
+The UI follows a consistent structure designed to showcase Leviathan AI's advanced technology with a modern, sleek interface:
+
+### Header
+- Fixed position navigation bar with logo and links
+- Navigation menu with links to Research, Technology, About, and Contact sections
+- Subtle scroll effect with box-shadow on scroll
+
+### Hero Section
+- Full-height hero section with animated quantum particle background
+- Headline: "Quantum Flux Neural Networks"
+- Subtitle: "Welcome to the depths of intelligence"
+- Brief description of the technology
+- Call-to-action button linking to Research section
+
+### Core Technology Section
+- Section title with decorative line
+- Grid layout of technology cards (5 cards)
+  - Quantum Flux Architecture
+  - Phase-Distance Attention
+  - Hebbian Learning
+  - Reality Engine
+  - Quantum Computing Implementation
+- Each card features a title, description, and "Learn more" link
+
+### Research Section
+- Section title with decorative line
+- Research paper cards with title, authors, abstract, and links
+- Links to arXiv and GitHub repositories
+
+### About Section
+- Section title with decorative line
+- Company description emphasizing physics-based approach to AI
+- Mission statement focused on reimagining neural computation
+
+### Contact Section
+- Section title with decorative line
+- Introduction text for contact options
+- Contact card with email information
+- Direct email link button
+
+### Footer
+- Copyright information
+- Leviathan AI Corporation branding
+
+### Color Scheme
+- Primary background: #0a192f (dark blue)
+- Secondary background: #112240 (slightly lighter blue)
+- Accent color: #64ffda (teal)
+- Primary text: #e6f1ff (off-white)
+- Secondary text: #8892b0 (light gray)
 
 ## Features
 
@@ -67,6 +122,10 @@ No build process or server is required as this is a static website.
 
 For inquiries about the website or Leviathan AI's technology, please contact:
 - Email: contact@leviathan-ai.net
+
+## Ownership
+
+This website and all its contents are owned by Leviathan AI Corporation. All intellectual property, including but not limited to the design, structure, text, graphics, and technology descriptions are proprietary to Leviathan AI Corporation.
 
 ## License
 
