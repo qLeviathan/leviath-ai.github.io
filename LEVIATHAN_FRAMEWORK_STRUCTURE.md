@@ -21,6 +21,7 @@
 9. [Development Workflow](#development-workflow)
 10. [Deployment Process](#deployment-process)
 11. [Replication Guide](#replication-guide)
+12. [Relationship to Φ-Mamba Research](#relationship-to-φ-mamba-research)
 
 ---
 
@@ -1155,12 +1156,141 @@ resizeCanvas(); // Initial call
 
 ---
 
+## Relationship to Φ-Mamba Research
+
+### Understanding the Dual Framework Approach
+
+This website documents the **front-end presentation layer** of Leviathan AI. However, the **actual research implementation** exists in a parallel repository: `phase_locked`.
+
+#### **Website Framework: QFNN (Quantum Flux Neural Networks)**
+- **Status:** Conceptual/aspirational architecture
+- **Foundation:** Quantum field theory principles
+- **Representation:** Tokens as quantum particles with phase/amplitude in 2D space
+- **Approach:** Physics-inspired neural architecture
+- **Implementation:** Demonstrated through interactive visualizers on this site
+
+#### **Research Framework: Φ-Mamba (Phi-Mamba)**
+- **Status:** Production-ready with full validation (4000+ lines)
+- **Foundation:** Game theory + golden ratio mathematics
+- **Representation:** Language as dynamic strategic game with φ-primitives
+- **Approach:** Game-theoretic language modeling with retrocausality
+- **Repository:** https://github.com/qLeviathan/phase_locked
+
+### Philosophical Alignment
+
+Both frameworks share the same core insight: **Intelligence emerges from fundamental mathematical structures, not arbitrary matrix operations.**
+
+| Aspect | QFNN (Website) | Φ-Mamba (phase_locked) |
+|--------|----------------|------------------------|
+| **Mathematical Foundation** | Quantum mechanics | Game theory + golden ratio |
+| **Core Primitive** | Phase & amplitude | φ = 1.618... (golden ratio) |
+| **Computation** | Hamiltonian dynamics | Backward induction equilibrium |
+| **Attention Mechanism** | Phase-distance interference | Nash equilibrium payoffs |
+| **Energy** | Conservation via normalization | φ^(-t) exponential decay |
+| **Learning** | Hebbian plasticity | Utility maximization |
+| **Exact Math** | Quantum operators | Integer Fibonacci arithmetic |
+
+### Key Innovations in Φ-Mamba
+
+**1. Golden Ratio as Foundational Primitive**
+```
+Traditional: Start with 1, derive φ = (1 + √5)/2
+Φ-Mamba: Start with φ, derive 1 = φ² - φ
+```
+
+**2. Language as Game**
+```python
+Game Γ = (N, S, A, u, T, β)
+- N: Players (tokens as strategic agents)
+- S: States (θ angle, energy φ^(-t), Fibonacci shells)
+- A: Actions (token selection)
+- u: Utility (phase coherence × energy)
+- T: Termination (natural via energy decay)
+- β: Discount (1/φ = 0.618... ensures time consistency)
+```
+
+**3. Retrocausality = Backward Induction**
+Future endpoint Ω constrains all past decisions through the Bellman equation:
+```
+V*(s) = max{u(s,a) + β·E[V*(s')|s,a]}
+```
+
+**4. Causal Inference via Fibonacci**
+Difference-in-differences using Zeckendorf decomposition as natural experiments.
+
+**5. Integer-Only Computation**
+All operations reduce to Fibonacci integer addition → exact arithmetic.
+
+### AURELIA: Conscious Trading Agent
+
+Φ-Mamba's practical application—a trading agent with five-layer consciousness:
+
+1. **Perception:** Market data via Zeckendorf encoding
+2. **Cognition:** φ/ψ lattice dynamics for decision-making
+3. **Emotion:** 5 evolving states (confidence, fear, greed, patience, discipline)
+4. **Memory:** Episodic, semantic, and procedural persistence
+5. **Execution:** Kelly criterion with emotional multipliers
+
+**Unique Feature:** Personality develops through market experience—path-dependent evolution creates a unique "trader consciousness."
+
+### Technical Implementation
+
+**Language Stack:**
+- Python (60.2%): Core algorithms
+- Rust (30.8%): Performance optimization
+- Jupyter (6.0%): Analysis
+- LaTeX (1.9%): Academic papers
+
+**Validation Status:**
+- ✅ All game theory tests passed
+- ✅ δ = 0.000815 (DiD treatment effect)
+- ✅ Natural convergence at t≈10
+- ✅ β = 1/φ verified to machine precision
+
+**Applications:**
+- Language modeling with exact arithmetic
+- Financial trading with game equilibrium guarantees
+- Causal inference in sequential decision-making
+
+### Potential Synthesis
+
+QFNN and Φ-Mamba aren't competing—they're **dual perspectives**:
+
+```
+QFNN Phase-Distance Attention ↔ Φ-Mamba Nash Equilibrium
+QFNN Energy Conservation      ↔ Φ-Mamba Game Constraints
+QFNN Quantum Tunneling         ↔ Φ-Mamba Mixed Strategies
+QFNN Hamiltonian               ↔ Φ-Mamba Value Function
+```
+
+Both achieve the same goal: **Post-AGI recursive operational intelligence through fundamental mathematics.**
+
+### Resources
+
+- **Φ-Mamba Implementation:** https://github.com/qLeviathan/phase_locked
+- **Comprehensive Analysis:** See `COMPREHENSIVE_RESEARCH_ANALYSIS.md` in this repository
+- **Academic Paper:** `arxiv_preprint.tex` in phase_locked repository
+- **Quick Start:** `QUICKSTART.md` in phase_locked repository
+
+### For Developers
+
+When building on this framework:
+1. **Website/Marketing:** Use patterns from this repository
+2. **Research/Production:** Use Φ-Mamba from phase_locked
+3. **Integration:** Both share design philosophy—choose based on needs
+
+**This website showcases the vision. phase_locked delivers the implementation.**
+
+---
+
 ## Credits & License
 
 **Framework:** Leviathan AI
 **Created by:** qLeviathan
-**Repository:** https://github.com/qLeviathan/leviath-ai.github.io
-**License:** MIT (or your chosen license)
+**Repositories:**
+- Website: https://github.com/qLeviathan/leviath-ai.github.io
+- Research: https://github.com/qLeviathan/phase_locked
+**License:** MIT
 
 ---
 
